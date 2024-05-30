@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  sqlserver:
+    image: sqlserver
+
+  login.api:
+    image: ${DOCKER_REGISTRY-}loginapi
+    build:
+      context: .
+      dockerfile: Login.API\Dockerfile

@@ -1,0 +1,36 @@
+name: dockercompose12279066424645995514
+services:
+  login.api:
+    build:
+      context: C:\Users\ferna\OneDrive\Documentos\Projetos_a_parte\Microsservices_praticle_project
+      dockerfile: Login.API\Dockerfile
+    container_name: login.api
+    depends_on:
+      sqlserver:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DockerConnection: Server=sqlserver;Port=1433;Database=MicrosservicePraticle;User=sa;Password=Fern@nd01331;
+    image: loginapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8001"
+      protocol: tcp
+  sqlserver:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Fern@nd01331
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1433"
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose12279066424645995514_default
