@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Login.API\Login.API.csproj" />
+    <ProjectReference Include="..\Usuario.get\Usuario.get.csproj" />
   </ItemGroup>
 
 </Project>
