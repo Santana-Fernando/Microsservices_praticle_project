@@ -1650,6 +1650,32 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Login.API/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
+          "BCrypt.Net": "0.1.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.1",
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.17",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.17",
+          "Microsoft.AspNetCore.Identity.UI": "5.0.17",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
+          "Microsoft.EntityFrameworkCore.Tools": "5.0.17",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.13",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Login.API.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Login.API.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -6286,6 +6312,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Login.API/1.0.0": {
+      "type": "project",
+      "path": "../Login.API/Login.API.csproj",
+      "msbuildProject": "../Login.API/Login.API.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6293,6 +6324,7 @@
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.0",
       "BCrypt.Net >= 0.1.0",
+      "Login.API >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.1",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 5.0.17",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.17",
@@ -6337,7 +6369,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ferna\\OneDrive\\Documentos\\Projetos_a_parte\\Microsservices_praticle_project\\Login.API\\Login.API.csproj": {
+              "projectPath": "C:\\Users\\ferna\\OneDrive\\Documentos\\Projetos_a_parte\\Microsservices_praticle_project\\Login.API\\Login.API.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
