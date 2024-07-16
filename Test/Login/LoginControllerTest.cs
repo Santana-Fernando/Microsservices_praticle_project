@@ -15,13 +15,11 @@ namespace Tests.Login
 {
     public class LoginControllerTest
     {
-        private readonly ITestOutputHelper _output;
         private readonly LoginRepository _loginRepository;
         private readonly LoginServices _loginServices;
         private readonly Presentation.Controllers.Login _loginController;
-        public LoginControllerTest(ITestOutputHelper output)
+        public LoginControllerTest()
         {
-            _output = output;
             _loginRepository = LoginRepositoryStub();
             var config = configIMapper();
             var mapperMock = config.CreateMapper();
@@ -50,11 +48,9 @@ namespace Tests.Login
             return config;
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should call LoginController")]
         public async Task LoginRepository_ShouldCallLoginController()
         {
-            _output.WriteLine("Should call LoginController");
-
             var loginEntry = new LoginEntryViewModel()
             {
                 email = "fer@gmail.com",
@@ -66,11 +62,9 @@ namespace Tests.Login
             Assert.NotNull(result);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should return the status StatusCodes.Status403Forbidden")]
         public async Task LoginRepository_ShouldReturnStatus403Forbidden()
         {
-            _output.WriteLine("Should return the status StatusCodes.Status403Forbidden");
-
             var loginEntry = new LoginEntryViewModel()
             {
                 email = "fer@gmail.com",
@@ -86,11 +80,9 @@ namespace Tests.Login
             }
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should return the status Status400BadRequest if e-mail is missing.")]
         public async Task LoginRepository_ShouldReturnStatus400BadRequestEmailMissing()
         {
-            _output.WriteLine("Should return the status Status400BadRequest if e-mail is missing.");
-
             var loginEntry = new LoginEntryViewModel()
             {
                 email = "",
@@ -106,11 +98,9 @@ namespace Tests.Login
             }
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should return the status Status400BadRequest if password is missing.")]
         public async Task LoginRepository_ShouldReturnStatus400BadRequestPasswordMissing()
         {
-            _output.WriteLine("Should return the status Status400BadRequest if password is missing.");
-
             var loginEntry = new LoginEntryViewModel()
             {
                 email = "fer@gmail.com",
@@ -126,11 +116,9 @@ namespace Tests.Login
             }
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should return the status 200OK if ok.")]
         public async Task LoginRepository_ShouldReturnStatus200IfOK()
         {
-            _output.WriteLine("Should return the status 200OK if ok.");
-
             var loginEntry = new LoginEntryViewModel()
             {
                 email = "system@gmail.com",

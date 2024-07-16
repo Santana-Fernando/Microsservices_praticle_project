@@ -12,13 +12,11 @@ namespace Test.Usuario.Get
 {
     public class UsuarioGetRepositoryTest
     {
-        private readonly ITestOutputHelper _output;
         private readonly ApplicationDbContext _dbContext;
         private readonly UsuarioGetRepository _usuarioGetRepository;
 
-        public UsuarioGetRepositoryTest(ITestOutputHelper output)
+        public UsuarioGetRepositoryTest()
         {
-            _output = output;
             AppSettingsMock appSettingsMock = new AppSettingsMock();
             var options = appSettingsMock.OptionsDatabaseStubUsuarioGet();
             _dbContext = new ApplicationDbContext(options);
@@ -53,11 +51,9 @@ namespace Test.Usuario.Get
             }
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should call the function GetById")]
         public async Task UsuarioRepository_ShouldCallFunctionGetById()
         {
-            _output.WriteLine("Should call the function GetById");
-
             using var transaction = await _dbContext.Database.BeginTransactionAsync();
 
             try
@@ -73,11 +69,9 @@ namespace Test.Usuario.Get
             }
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should call the function GetByEmail")]
         public async Task UsuarioRepository_ShouldCallFunctionGetByEmail()
         {
-            _output.WriteLine("Should call the function GetByEmail");
-
             using var transaction = await _dbContext.Database.BeginTransactionAsync();
 
             try
@@ -93,12 +87,11 @@ namespace Test.Usuario.Get
             }
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should call the function GetList")]
         public async Task UsuarioRepository_ShouldCallFunctionGetList()
         {
             RemoverAllUsers();
-            _output.WriteLine("Should call the function GetList");
-
+            
             using var transaction = await _dbContext.Database.BeginTransactionAsync();
             
             try

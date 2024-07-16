@@ -10,16 +10,14 @@ using Login.API.Domain.Entities;
 using Microsoft.Extensions.Configuration;
 using Login.API.Domain.Intefaces;
 
-namespace Test.Login
+namespace Tests.Login
 {
     public class LoginRepositoryTest
     {
-        private readonly ITestOutputHelper _output;
         private readonly ApplicationDbContext _dbContext;
         private readonly LoginRepository _loginRepository;
-        public LoginRepositoryTest(ITestOutputHelper output)
+        public LoginRepositoryTest()
         {
-            _output = output;
             AppSettingsMock appSettingsMock = new AppSettingsMock();
             var options = appSettingsMock.OptionsDatabaseStub();
             var configurationMock = appSettingsMock.configurationMockStub();
@@ -27,11 +25,9 @@ namespace Test.Login
             _loginRepository = new LoginRepository(_dbContext, configurationMock.Object);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should call Authenticatio Login and return any answer")]
         public async Task LoginRepository_ShouldCallAuthenticationLogin()
         {
-            _output.WriteLine("Should call Authenticatio Login and return any answer");
-
             var loginEntry = new LoginEntry
             {
                 email = "test@example.com",
@@ -43,11 +39,9 @@ namespace Test.Login
             Assert.NotNull(result);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should return access denied if login data not exists")]
         public async Task LoginRepository_ShouldReturnAccessDeniedIfLoginEntryDataNotExists()
         {
-            _output.WriteLine("Should return access denied if login data not exists");
-
             var loginEntry = new LoginEntry
             {
                 email = "test@example.com",
@@ -61,11 +55,9 @@ namespace Test.Login
             Assert.Equal(System.Net.HttpStatusCode.Forbidden, result.statusCode);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should return internal server error if login catches")]
         public async Task LoginRepository_ShouldReturnInternalServerErrorIfLoginCatches()
         {
-            _output.WriteLine("Should return internal server error if login catches");
-
             var configurationMock = new Mock<IConfiguration>();
             var loginRepository = new Mock<ILogin>();
 
@@ -89,11 +81,9 @@ namespace Test.Login
             Assert.Equal(System.Net.HttpStatusCode.InternalServerError, result.statusCode);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Should return OK if login is correct")]
         public async Task LoginRepository_ShouldReturnOkIfLoginIsCorrect()
         {
-            _output.WriteLine("Should return OK if login is correct");
-
             AppSettingsMock appSettingsMock = new AppSettingsMock();
             var configurationMock = appSettingsMock.configurationMockStub();
             var loginEntry = new LoginEntry
