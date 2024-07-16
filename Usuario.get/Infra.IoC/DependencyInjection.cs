@@ -1,9 +1,12 @@
-﻿using Login.API.Infra.Data.Context;
+﻿using Usuario.get.Infra.Data.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Usuario.get.Infra.Data;
+using Usuario.get.Domain.Interfaces;
+using Usuario.get.Infra.Data.Repository;
+using Usuario.get.Application.Usuario.Interfaces;
+using Usuario.get.Application.Services;
 
 namespace Usuario.get.Infra.IoC
 {
@@ -19,6 +22,8 @@ namespace Usuario.get.Infra.IoC
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddScoped<IUsuario, UsuarioGetRepository>();
+            services.AddScoped<IUsuarioServices, UsuarioServices>();
             return services;
         }
     }

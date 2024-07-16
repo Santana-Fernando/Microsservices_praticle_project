@@ -1,5 +1,5 @@
-﻿using Login.API.Infra.Data.Context;
-using System;
+﻿using Usuario.get.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Usuario.get.Domain.Entidades;
@@ -14,19 +14,19 @@ namespace Usuario.get.Infra.Data.Repository
         {
             _context = context;
         }
-        public Task<Usuarios> GetByEmail(string email)
+        public async Task<Usuarios> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Usuarios.FindAsync(id);
         }
 
-        public Task<Usuarios> GetById(int id)
+        public async Task<Usuarios> GetByEmail(string email)
         {
-            throw new NotImplementedException();
+            return await _context.Usuarios.SingleOrDefaultAsync(u => u.email == email);
         }
 
-        public Task<IEnumerable<Usuarios>> GetList()
+        public async Task<IEnumerable<Usuarios>> GetList()
         {
-            throw new NotImplementedException();
+            return await _context.Usuarios.ToListAsync();
         }
     }
 }

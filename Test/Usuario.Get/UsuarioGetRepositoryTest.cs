@@ -1,4 +1,4 @@
-﻿using Login.API.Infra.Data.Context;
+﻿using Usuario.get.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,7 +20,7 @@ namespace Test.Usuario.Get
         {
             _output = output;
             AppSettingsMock appSettingsMock = new AppSettingsMock();
-            var options = appSettingsMock.OptionsDatabaseStub();
+            var options = appSettingsMock.OptionsDatabaseStubUsuarioGet();
             _dbContext = new ApplicationDbContext(options);
 
             _usuarioGetRepository = new UsuarioGetRepository(_dbContext);
@@ -29,7 +29,7 @@ namespace Test.Usuario.Get
         private void RemoverAllUsers()
         {
             AppSettingsMock appSettingsMock = new AppSettingsMock();
-            var options = appSettingsMock.OptionsDatabaseStub();
+            var options = appSettingsMock.OptionsDatabaseStubUsuarioGet();
 
             using (var dbContext = new ApplicationDbContext(options))
             {

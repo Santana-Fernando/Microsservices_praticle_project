@@ -36,7 +36,18 @@ namespace Tests.Helper
 
             return options;
         }
-        
+
+        public DbContextOptions<Usuario.get.Infra.Data.Context.ApplicationDbContext> OptionsDatabaseStubUsuarioGet()
+        {
+            const string defaultConnectionString = "Data Source=localhost;User ID=sa;Password=Fern@nd01331;Database=MicrosservicePraticle;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+            var options = new DbContextOptionsBuilder<Usuario.get.Infra.Data.Context.ApplicationDbContext>()
+                .UseSqlServer(defaultConnectionString)
+                .Options;
+
+            return options;
+        }
+
         /*public MapperConfiguration configIMapper()
         {
             var config = new MapperConfiguration(cfg => {

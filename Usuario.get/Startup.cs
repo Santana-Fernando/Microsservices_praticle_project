@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Usuario.get.Application.MappingConfig;
 using Usuario.get.Infra.IoC;
 
 namespace Usuario.get
@@ -26,6 +27,7 @@ namespace Usuario.get
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructure(Configuration);
+            services.AddAutoMapperConfiguration();
             services.AddControllers();
         }
 
