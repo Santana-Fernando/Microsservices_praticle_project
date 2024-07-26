@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Tests.Helper;
 using Xunit;
 using Xunit.Abstractions;
+using Login.API.Controllers;
 
 namespace Tests.Login
 {
@@ -17,7 +18,7 @@ namespace Tests.Login
     {
         private readonly LoginRepository _loginRepository;
         private readonly LoginServices _loginServices;
-        private readonly Presentation.Controllers.Login _loginController;
+        private readonly LoginController _loginController;
         public LoginControllerTest()
         {
             _loginRepository = LoginRepositoryStub();
@@ -25,7 +26,7 @@ namespace Tests.Login
             var mapperMock = config.CreateMapper();
 
             _loginServices = new LoginServices(_loginRepository, mapperMock);
-            _loginController = new Presentation.Controllers.Login(_loginServices);
+            _loginController = new LoginController(_loginServices);
         }
 
         private LoginRepository LoginRepositoryStub()

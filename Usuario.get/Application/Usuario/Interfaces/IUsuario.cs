@@ -4,7 +4,7 @@ using Usuario.get.Application.Usuario.ViewModel;
 
 namespace Usuario.get.Application.Usuario.Interfaces
 {
-    public interface IUsuarioServices
+    public interface IUsuarioGetServices
     {
         Task<IEnumerable<UsuarioView>> GetList();
         Task<UsuarioView> GetById(int id);

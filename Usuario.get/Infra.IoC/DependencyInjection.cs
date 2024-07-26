@@ -23,7 +23,7 @@ namespace Usuario.get.Infra.IoC
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddScoped<IUsuario, UsuarioGetRepository>();
-            services.AddScoped<IUsuarioServices, UsuarioServices>();
+            services.AddScoped<IUsuarioGetServices, UsuarioGetServices>();
             return services;
         }
     }

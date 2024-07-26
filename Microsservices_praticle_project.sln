@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{372F48C2-712B-41C4-ACFC-F1BABB4CD20F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usuario.get", "Usuario.get\Usuario.get.csproj", "{C29C2BEF-CD51-409C-AC1D-3B7E0A2D12CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Usuario.get", "Usuario.get\Usuario.get.csproj", "{C29C2BEF-CD51-409C-AC1D-3B7E0A2D12CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

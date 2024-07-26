@@ -8,11 +8,11 @@ using Usuario.get.Domain.Interfaces;
 
 namespace Usuario.get.Application.Services
 {
-    public class UsuarioServices: IUsuarioServices
+    public class UsuarioGetServices: IUsuarioGetServices
     {
         private IUsuario _usuarioRepository;
         private IMapper _mapper;
-        public UsuarioServices(IUsuario usuarioRepository, IMapper mapper)
+        public UsuarioGetServices(IUsuario usuarioRepository, IMapper mapper)
         {
             _usuarioRepository = usuarioRepository;
             _mapper = mapper;

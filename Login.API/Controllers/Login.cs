@@ -5,13 +5,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Presentation.Controllers
+namespace Login.API.Controllers
 {
     [Route("api/[controller]")]
-    public class Login : Controller
+    public class LoginController : Controller
     {
         private readonly ILoginServices _loginServices;
-        public Login(ILoginServices loginServices)
+        public LoginController(ILoginServices loginServices)
         {
             _loginServices = loginServices;
         }

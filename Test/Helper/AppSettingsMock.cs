@@ -4,6 +4,7 @@ using Login.API.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Moq;
+using Usuario.get.Application.Usuario.ViewModel;
 
 namespace Tests.Helper
 {
@@ -48,7 +49,7 @@ namespace Tests.Helper
             return options;
         }
 
-        /*public MapperConfiguration configIMapper()
+        public MapperConfiguration configIMapper()
         {
             var config = new MapperConfiguration(cfg => {
                 cfg.CreateMap<UsuariosViewModel, Usuarios>()
@@ -78,6 +79,6 @@ namespace Tests.Helper
             });
 
             return config;
-        }*/
+        }
     }
 }

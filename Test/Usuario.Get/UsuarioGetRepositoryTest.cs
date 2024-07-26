@@ -54,37 +54,19 @@ namespace Test.Usuario.Get
         [Fact(DisplayName = "Should call the function GetById")]
         public async Task UsuarioRepository_ShouldCallFunctionGetById()
         {
-            using var transaction = await _dbContext.Database.BeginTransactionAsync();
+            var usuario = await _usuarioGetRepository.GetById(1);
 
-            try
-            {
-                var usuario = await _usuarioGetRepository.GetById(1);
-
-                Assert.NotNull(usuario);
-                Assert.True(usuario.email == "system@gmail.com");
-            }
-            finally
-            {
-                await transaction.RollbackAsync();
-            }
+            Assert.NotNull(usuario);
+            Assert.True(usuario.email == "system@gmail.com");            
         }
 
         [Fact(DisplayName = "Should call the function GetByEmail")]
         public async Task UsuarioRepository_ShouldCallFunctionGetByEmail()
-        {
-            using var transaction = await _dbContext.Database.BeginTransactionAsync();
+        {            
+            var usuario = await _usuarioGetRepository.GetByEmail("system@gmail.com");
 
-            try
-            {
-                var usuario = await _usuarioGetRepository.GetByEmail("system@gmail.com");
-
-                Assert.NotNull(usuario);
-                Assert.True(usuario.email == "system@gmail.com");
-            }
-            finally
-            {
-                await transaction.RollbackAsync();
-            }
+            Assert.NotNull(usuario);
+            Assert.True(usuario.email == "system@gmail.com");   
         }
 
         [Fact(DisplayName = "Should call the function GetList")]
@@ -92,20 +74,11 @@ namespace Test.Usuario.Get
         {
             RemoverAllUsers();
             
-            using var transaction = await _dbContext.Database.BeginTransactionAsync();
-            
-            try
-            {
-                var usuario = await _usuarioGetRepository.GetList();
+            var usuario = await _usuarioGetRepository.GetList();
 
-                Assert.NotNull(usuario);
-                Assert.True(usuario.ToList().Count > 0);
-            }
-            finally
-            {
-                await transaction.RollbackAsync();
-            }
-            RemoverAllUsers();
+            Assert.NotNull(usuario);
+            Assert.True(usuario.ToList().Count > 0);
+            
         }
 
     }
