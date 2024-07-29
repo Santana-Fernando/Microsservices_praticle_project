@@ -34,7 +34,7 @@ namespace Test.Usuario.Get
         private UsuarioGetRepository UsuariosRepositoryStub()
         {
             AppSettingsMock appSettingsMock = new AppSettingsMock();
-            var options = appSettingsMock.OptionsDatabaseStubUsuarioGet();
+            var options = appSettingsMock.OptionsDatabaseStub<ApplicationDbContext>();
             var dbContext = new ApplicationDbContext(options);
             return new UsuarioGetRepository(dbContext);
         }

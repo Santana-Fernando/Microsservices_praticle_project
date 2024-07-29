@@ -18,7 +18,7 @@ namespace Test.Usuario.Get
         public UsuarioGetRepositoryTest()
         {
             AppSettingsMock appSettingsMock = new AppSettingsMock();
-            var options = appSettingsMock.OptionsDatabaseStubUsuarioGet();
+            var options = appSettingsMock.OptionsDatabaseStub<ApplicationDbContext>();
             _dbContext = new ApplicationDbContext(options);
 
             _usuarioGetRepository = new UsuarioGetRepository(_dbContext);
@@ -27,7 +27,7 @@ namespace Test.Usuario.Get
         private void RemoverAllUsers()
         {
             AppSettingsMock appSettingsMock = new AppSettingsMock();
-            var options = appSettingsMock.OptionsDatabaseStubUsuarioGet();
+            var options = appSettingsMock.OptionsDatabaseStub<ApplicationDbContext>();
 
             using (var dbContext = new ApplicationDbContext(options))
             {

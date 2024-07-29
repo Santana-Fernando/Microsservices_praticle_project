@@ -32,7 +32,7 @@ namespace Tests.Login
         private LoginRepository LoginRepositoryStub()
         {
             AppSettingsMock appSettingsMock = new AppSettingsMock();
-            var options = appSettingsMock.OptionsDatabaseStub();
+            var options = appSettingsMock.OptionsDatabaseStub<ApplicationDbContext>();
             var dbContext = new ApplicationDbContext(options);
             var configurationMock = appSettingsMock.configurationMockStub();
 
