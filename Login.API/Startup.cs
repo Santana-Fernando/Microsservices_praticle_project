@@ -1,4 +1,5 @@
 using Login.API.Infra.IoC;
+using Login.API.Infra.IoC.Services;
 using Login.API.MappingConfig;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
@@ -40,6 +41,8 @@ namespace Login.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            DatabaseManagmentService.MigrationInitialisation(app);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

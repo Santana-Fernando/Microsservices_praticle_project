@@ -9,3 +9,10 @@ services:
     build:
       context: .
       dockerfile: Login.API\Dockerfile
+
+  usuario.get:
+    image: ${DOCKER_REGISTRY-}usuarioget
+    build:
+      context: .
+      dockerfile: Usuario.get\Dockerfile
+

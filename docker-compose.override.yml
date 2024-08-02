@@ -1,20 +1,33 @@
 version: '3.4'
 
 services:
-  login.api:
-    container_name: login.api
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DockerConnection=Server=sqlserver;Port=1433;Database=MicrosservicePraticle;User=sa;Password=Fern@nd01331;
-    depends_on:
-      - sqlserver
-    ports:
-      - "8001:80"
-
   sqlserver:
     image: mcr.microsoft.com/mssql/server:latest
     environment:
       SA_PASSWORD: "Fern@nd01331"
       ACCEPT_EULA: "Y"
     ports:
-      - "1433:1433"
+      - "1450:1433"
+
+  login.api:
+    container_name: login.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=Fern@nd01331;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
+    depends_on:
+      - sqlserver
+    ports:
+      - "8001:80"
+    
+  usuario.get:
+    container_name: usuario.get
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=Fern@nd01331;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
+    depends_on:
+      - sqlserver
+    ports:
+      - "8002:80"
+
+
+
