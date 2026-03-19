@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using Login.API.Domain.Entities;
-using Login.API.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Usuario.Application;
 using Moq;
-using Usuario.get.Application.Usuario.ViewModel;
+using Usuario.Domain;
+using AutoMapper.Internal;
 
 namespace Tests.Helper
 {
@@ -40,31 +40,15 @@ namespace Tests.Helper
 
         public MapperConfiguration configIMapper()
         {
-            var config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<UsuariosViewModel, Usuarios>()
-                    .ForMember(dest => dest.name, opt => opt.MapFrom(src => src.name))
-                    .ForMember(dest => dest.email, opt => opt.MapFrom(src => src.email))
-                    .ForMember(dest => dest.password, opt => opt.MapFrom(src => src.password));
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.Internal().MethodMappingEnabled = false;
 
-                cfg.CreateMap<Usuarios, UsuariosViewModel>()
-                    .ForMember(dest => dest.id, opt => opt.MapFrom(src => src.id))
-                    .ForMember(dest => dest.name, opt => opt.MapFrom(src => src.name))
-                    .ForMember(dest => dest.email, opt => opt.MapFrom(src => src.email));
-
-                cfg.CreateMap<UsuariosViewModel, UsuarioView>()
-                   .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.id))
-                   .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.name))
-                   .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.email));
-
-                cfg.CreateMap<UsuarioView, UsuariosViewModel>()
-                    .ForMember(dest => dest.id, opt => opt.MapFrom(src => src.Id))
-                    .ForMember(dest => dest.name, opt => opt.MapFrom(src => src.Name))
-                    .ForMember(dest => dest.email, opt => opt.MapFrom(src => src.Email));
-
-                cfg.CreateMap<Usuarios, UsuarioView>()
-                    .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.id))
-                    .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.name))
-                    .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.email));
+                cfg.CreateMap<UsuariosViewModel, Usuarios>();
+                cfg.CreateMap<Usuarios, UsuariosViewModel>();
+                cfg.CreateMap<UsuariosViewModel, UsuarioView>();
+                cfg.CreateMap<UsuarioView, UsuariosViewModel>();
+                cfg.CreateMap<Usuarios, UsuarioView>();
             });
 
             return config;

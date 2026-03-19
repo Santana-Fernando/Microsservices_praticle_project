@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Login.API.Application.Mapping;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using Usuario.Application;
 
 namespace Login.API.MappingConfig
 {
@@ -11,8 +11,8 @@ namespace Login.API.MappingConfig
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddAutoMapper(typeof(DomainToViewModelMappingProfile), 
-                typeof(ViewModelToDomainMappingProfile));
+            services.AddAutoMapper(typeof(DomainToViewModelMappingProfileLogin), 
+                typeof(ViewModelToDomainMappingProfileLogin));
         }
     }
 }

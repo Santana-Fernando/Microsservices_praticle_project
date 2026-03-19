@@ -7,14 +7,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using Usuario.get.Application.MappingConfig;
-using Usuario.get.Infra.IoC;
+using Usuario.Infra;
 
 namespace Usuario.get
 {

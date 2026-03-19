@@ -1,9 +1,8 @@
-﻿using Login.API.Application.Interfaces;
-using Login.API.Application.ViewModel;
-using Login.API.Domain.Entities;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Usuario.Application;
+using Usuario.Domain;
 
 namespace Login.API.Controllers
 {

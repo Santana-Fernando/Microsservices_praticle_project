@@ -4,12 +4,10 @@ using Moq;
 using System;
 using System.Threading.Tasks;
 using Tests.Helper;
-using Usuario.get.Application.Services;
-using Usuario.get.Application.Usuario.Interfaces;
+using Usuario.Application;
 using Usuario.get.Controllers;
-using Usuario.get.Domain.Entidades;
-using Usuario.get.Infra.Data.Context;
 using Usuario.get.Infra.Data.Repository;
+using Usuario.Infra;
 using Xunit;
 using Xunit.Abstractions;
 

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Tests.Helper;
-using Usuario.get.Application.Services;
-using Usuario.get.Infra.Data.Context;
+using Usuario.Application;
 using Usuario.get.Infra.Data.Repository;
+using Usuario.Infra;
 
 namespace Test.Usuario.Get
 {

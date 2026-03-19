@@ -1,15 +1,10 @@
-﻿using Login.API.Application.ViewModel;
-using Login.API.Application.Services;
-using Login.API.Application.Validation;
-using AutoMapper;
-using Login.API.Domain.Entities;
-using Login.API.Domain.Intefaces;
+﻿using AutoMapper;
 using Moq;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
-using ValidationContext = System.ComponentModel.DataAnnotations.ValidationContext;
+using Usuario.Application;
+using Usuario.Domain;
 
 namespace Tests.Login
 {

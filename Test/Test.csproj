@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Login.API\Login.API.csproj" />
     <ProjectReference Include="..\Usuario.get\Usuario.get.csproj" />
+    <ProjectReference Include="..\Usuario.Infra\Usuario.Infra.csproj" />
   </ItemGroup>
 
 </Project>

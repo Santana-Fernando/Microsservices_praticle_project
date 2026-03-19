@@ -1,14 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Moq;
 using Tests.Helper;
-using Login.API.Application.Helpers;
-using Xunit.Abstractions;
-using Login.API.Infra.Data.Repository;
-using Login.API.Infra.Data.Context;
 using Xunit;
-using Login.API.Domain.Entities;
 using Microsoft.Extensions.Configuration;
-using Login.API.Domain.Intefaces;
+using Usuario.Infra;
+using Usuario.Domain;
+using Usuario.Application;
 
 namespace Tests.Login
 {

@@ -2,10 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Usuario.get.Application.Usuario.Interfaces;
 using Microsoft.AspNetCore.Http;
-using Usuario.get.Application.Usuario.ViewModel;
 using System;
+using Usuario.Application;
 
 namespace Usuario.get.Controllers
 {

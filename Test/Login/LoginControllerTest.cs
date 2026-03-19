@@ -1,16 +1,13 @@
-﻿using Login.API.Application.ViewModel;
-using Login.API.Application.Services;
-using AutoMapper;
-using Login.API.Domain.Entities;
-using Login.API.Infra.Data.Context;
-using Login.API.Infra.Data.Repository;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Tests.Helper;
 using Xunit;
-using Xunit.Abstractions;
 using Login.API.Controllers;
+using Usuario.Infra;
+using Usuario.Application;
+using Usuario.Domain;
 
 namespace Tests.Login
 {

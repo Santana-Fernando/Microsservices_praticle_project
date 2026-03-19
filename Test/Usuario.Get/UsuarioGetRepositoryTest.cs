@@ -1,12 +1,11 @@
-﻿using Usuario.get.Infra.Data.Context;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using Tests.Helper;
-using Usuario.get.Domain.Entidades;
+using Usuario.Domain;
 using Usuario.get.Infra.Data.Repository;
+using Usuario.Infra;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Test.Usuario.Get
 {

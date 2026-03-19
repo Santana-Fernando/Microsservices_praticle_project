@@ -1,19 +1,11 @@
-using Login.API.Infra.IoC;
-using Login.API.Infra.IoC.Services;
 using Login.API.MappingConfig;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Text.Json.Serialization;
+using Usuario.Infra;
 
 namespace Login.API
 {
