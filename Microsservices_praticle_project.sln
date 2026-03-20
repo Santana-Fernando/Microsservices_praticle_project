@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Usuario.Application", "Usua
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Usuario.Infra", "Usuario.Infra\Usuario.Infra.csproj", "{6FA02ED9-1C69-4F31-BCF5-7C2533FEA132}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Usuario.API", "Usuario.API", "{05EC3625-56E3-4A8A-8C52-91A4B36F047D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,10 +54,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{FDDAEBE5-8366-42F8-8D86-007AFAEDACD7} = {05EC3625-56E3-4A8A-8C52-91A4B36F047D}
-		{C29C2BEF-CD51-409C-AC1D-3B7E0A2D12CD} = {05EC3625-56E3-4A8A-8C52-91A4B36F047D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F08731D4-95F8-46C0-84A2-E1EC6964847F}

@@ -7,13 +7,13 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-COPY ["Usuario.API/Login.API/Login.API.csproj", "Usuario.API/Login.API/"]
+COPY ["Login.API/Login.API.csproj", "Login.API/"]
 
-RUN dotnet restore "Usuario.API/Login.API/Login.API.csproj"
+RUN dotnet restore "Login.API/Login.API.csproj"
 
 COPY . .
 
-WORKDIR "/src/Usuario.API/Login.API"
+WORKDIR "/src/Login.API"
 RUN dotnet build "Login.API.csproj" -c Release -o /app/build
 
 # Publish

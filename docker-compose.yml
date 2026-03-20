@@ -8,11 +8,11 @@ services:
     image: ${DOCKER_REGISTRY-}loginapi
     build:
       context: .
-      dockerfile: Usuario.API/Login.API/Dockerfile
+      dockerfile: Login.API/Dockerfile
 
   usuario.get:
     image: ${DOCKER_REGISTRY-}usuarioget
     build:
       context: .
-      dockerfile: Usuario.API/Usuario.get/Dockerfile
+      dockerfile: Usuario.get/Dockerfile
 

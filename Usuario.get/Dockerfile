@@ -7,13 +7,13 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-COPY ["Usuario.API/Usuario.get/Usuario.get.csproj", "Usuario.API/Usuario.get/"]
+COPY ["Usuario.get/Usuario.get.csproj", "Usuario.get/"]
 
-RUN dotnet restore "Usuario.API/Usuario.get/Usuario.get.csproj"
+RUN dotnet restore "Usuario.get/Usuario.get.csproj"
 
 COPY . .
 
-WORKDIR "/src/Usuario.API/Usuario.get"
+WORKDIR "/src/Usuario.get"
 RUN dotnet build "Usuario.get.csproj" -c Release -o /app/build
 
 # Publish
