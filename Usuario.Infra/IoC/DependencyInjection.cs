@@ -4,8 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Usuario.Application;
 using Usuario.Domain;
-using Usuario.get.Infra.Data.Repository;
-using Usuario.Infra;
 
 namespace Usuario.Infra;
 
@@ -15,7 +13,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(
-                configuration.GetConnectionString("DockerConnection")));
+                configuration.GetConnectionString("DefaultConnection")));
         services.AddDatabaseDeveloperPageExceptionFilter();
 
         services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -23,8 +21,10 @@ public static class DependencyInjection
 
         services.AddScoped<ILogin, LoginRepository>();
         services.AddScoped<ILoginServices, LoginServices>();
-        services.AddScoped<IUsuario, UsuarioGetRepository>();
+        services.AddScoped<IUsuarioGet, UsuarioGetRepository>();
         services.AddScoped<IUsuarioGetServices, UsuarioGetServices>();
+        services.AddScoped<IUsuarioPost, UsuarioPostRepository>();
+        services.AddScoped<IUsuarioPostServices, UsuarioPostServices>();
         return services;
     }
 }

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 using Tests.Helper;
 using Usuario.Application;
 using Usuario.get.Controllers;
-using Usuario.get.Infra.Data.Repository;
 using Usuario.Infra;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Test.Usuario.Get
 {

@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Tests.Helper;
 using Usuario.Application;
-using Usuario.get.Infra.Data.Repository;
 using Usuario.Infra;
 
 namespace Test.Usuario.Get

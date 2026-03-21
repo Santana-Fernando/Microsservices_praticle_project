@@ -1,6 +1,6 @@
 ﻿namespace Usuario.Domain;
 
-public interface IUsuario
+public interface IUsuarioGet
 {
     Task<IEnumerable<Usuarios>> GetList();
     Task<Usuarios> GetById(int id);

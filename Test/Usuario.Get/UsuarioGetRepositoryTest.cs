@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Tests.Helper;
 using Usuario.Domain;
-using Usuario.get.Infra.Data.Repository;
 using Usuario.Infra;
 using Xunit;
 

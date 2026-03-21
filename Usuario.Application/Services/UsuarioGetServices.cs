@@ -5,9 +5,9 @@ namespace Usuario.Application;
 
 public class UsuarioGetServices: IUsuarioGetServices
 {
-    private IUsuario _usuarioRepository;
+    private IUsuarioGet _usuarioRepository;
     private IMapper _mapper;
-    public UsuarioGetServices(IUsuario usuarioRepository, IMapper mapper)
+    public UsuarioGetServices(IUsuarioGet usuarioRepository, IMapper mapper)
     {
         _usuarioRepository = usuarioRepository;
         _mapper = mapper;

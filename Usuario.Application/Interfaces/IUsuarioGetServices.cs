@@ -1,6 +1,4 @@
-﻿using Usuario.Application;
-
-namespace Usuario.Application;
+﻿namespace Usuario.Application;
 
 public interface IUsuarioGetServices
 {

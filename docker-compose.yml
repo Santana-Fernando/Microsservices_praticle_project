@@ -16,3 +16,9 @@ services:
       context: .
       dockerfile: Usuario.get/Dockerfile
 
+  usuario.post:
+    image: ${DOCKER_REGISTRY-}usuariopost
+    build:
+      context: .
+      dockerfile: Usuario.post/Dockerfile
+
