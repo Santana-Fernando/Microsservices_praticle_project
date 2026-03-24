@@ -23,7 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Usuario.Application\Usuario.Application.csproj" />
     <ProjectReference Include="..\Usuario.Infra\Usuario.Infra.csproj" />
+    <ProjectReference Include="..\Usuarios.Domain\Usuario.Domain.csproj" />
   </ItemGroup>
 
 </Project>
