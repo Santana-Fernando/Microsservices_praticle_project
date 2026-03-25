@@ -24,6 +24,7 @@
     <ProjectReference Include="..\Login.API\Login.API.csproj" />
     <ProjectReference Include="..\Usuario.get\Usuario.get.csproj" />
     <ProjectReference Include="..\Usuario.Infra\Usuario.Infra.csproj" />
+    <ProjectReference Include="..\Usuario.post\Usuario.post.csproj" />
   </ItemGroup>
 
 </Project>
