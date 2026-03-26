@@ -25,6 +25,7 @@
     <ProjectReference Include="..\Usuario.get\Usuario.get.csproj" />
     <ProjectReference Include="..\Usuario.Infra\Usuario.Infra.csproj" />
     <ProjectReference Include="..\Usuario.post\Usuario.post.csproj" />
+    <ProjectReference Include="..\Usuario.put\Usuario.put.csproj" />
   </ItemGroup>
 
 </Project>
