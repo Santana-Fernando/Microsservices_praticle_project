@@ -23,7 +23,7 @@ public class UsuariosViewModel
     [MinLength(6)]
     [MaxLength(10)]
     [DisplayName("Password")]
-    public string? password { get; set; }
+    public string password { get; set; }
 
     [Required(ErrorMessage = "The Password need to be confirmed")]
     [MinLength(6)]

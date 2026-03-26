@@ -27,6 +27,8 @@ public static class DependencyInjection
         services.AddScoped<IUsuarioGetServices, UsuarioGetServices>();
         services.AddScoped<IUsuarioPost, UsuarioPostRepository>();
         services.AddScoped<IUsuarioPostServices, UsuarioPostServices>();
+        services.AddScoped<IUsuarioPut, UsuarioPutRepository>();
+        services.AddScoped<IUsuarioPutServices, UsuarioPutServices>();
         return services;
     }
 }

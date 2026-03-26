@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using Usuario.Infra;
 
-namespace Usuario.post
+namespace Usuario.put
 {
     public class Startup
     {
@@ -34,7 +34,7 @@ namespace Usuario.post
             });
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Usuario.post", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Usuario.put", Version = "v1" });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -91,7 +91,7 @@ namespace Usuario.post
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Usuario.post v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Usuario.put v1"));
             }
 
             app.UseHttpsRedirection();

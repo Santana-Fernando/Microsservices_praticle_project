@@ -4,13 +4,8 @@ using Usuario.Domain;
 
 namespace Usuario.Infra;
 
-public class ApplicationDbContext : IdentityDbContext
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext(options)
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-   : base(options)
-    {
-    }
-
     public DbSet<Usuarios> Usuarios { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)

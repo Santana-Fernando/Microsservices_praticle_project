@@ -21,4 +21,10 @@ services:
     build:
       context: .
       dockerfile: Usuario.post/Dockerfile
+  
+  usuario.put:
+    image: ${DOCKER_REGISTRY-}usuarioput
+    build:
+      context: .
+      dockerfile: Usuario.put/Dockerfile
  

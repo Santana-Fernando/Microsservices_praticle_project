@@ -13,7 +13,7 @@ public static class DatabaseManagmentService
         {
             var serviceDb = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
 
-            serviceDb.Database.Migrate();
+            serviceDb?.Database.Migrate();
         }
     }
 }
