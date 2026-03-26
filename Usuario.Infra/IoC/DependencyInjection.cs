@@ -12,11 +12,11 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DockerConnection")));
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         services.AddDatabaseDeveloperPageExceptionFilter();
 
         Console.WriteLine("\n\n\n\nCONNECTION STRING:");
-        Console.WriteLine(configuration.GetConnectionString("DockerConnection"));
+        Console.WriteLine(configuration.GetConnectionString("DefaultConnection"));
 
         services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -29,6 +29,8 @@ public static class DependencyInjection
         services.AddScoped<IUsuarioPostServices, UsuarioPostServices>();
         services.AddScoped<IUsuarioPut, UsuarioPutRepository>();
         services.AddScoped<IUsuarioPutServices, UsuarioPutServices>();
+        services.AddScoped<IUsuarioDel, UsuarioDelRepository>();
+        services.AddScoped<IUsuarioDelService, UsuarioDelServices>();
         return services;
     }
 }
