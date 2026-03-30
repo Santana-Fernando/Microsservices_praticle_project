@@ -4,7 +4,7 @@ services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
-      MSSQL_SA_PASSWORD: "Fern@nd01331"
+      MSSQL_SA_PASSWORD: "******"
       ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
@@ -13,7 +13,7 @@ services:
     container_name: login.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=Fern@nd01331;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
+      - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=******;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
     depends_on:
       - sqlserver
     ports:
@@ -23,7 +23,7 @@ services:
     container_name: usuario.get
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=Fern@nd01331;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
+      - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=******;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
     depends_on:
       - sqlserver
     ports:
@@ -33,7 +33,7 @@ services:
     container_name: usuario.post
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=Fern@nd01331;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
+      - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=******;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
     depends_on:
       - sqlserver
     ports:
@@ -43,7 +43,7 @@ services:
     container_name: usuario.put
     environment:
         - ASPNETCORE_ENVIRONMENT=Development
-        - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=Fern@nd01331;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
+        - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=******;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
     depends_on:
         - sqlserver
     ports:
@@ -53,7 +53,7 @@ services:
     container_name: usuario.del
     environment:
         - ASPNETCORE_ENVIRONMENT=Development
-        - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=Fern@nd01331;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
+        - ConnectionStrings__DockerConnection=Server=sqlserver;Database=MicrosservicePraticle;User ID=sa;Password=******;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;
     depends_on:
         - sqlserver
     ports:
